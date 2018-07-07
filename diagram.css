@@ -1,0 +1,110 @@
+.day {
+    height: 70px;
+}
+
+.day-name {
+    margin-left: 5px;
+}
+
+.format-date {
+    display: block;
+}
+
+.timeline {
+    height: 58px;
+    background-color: rgba(0, 0, 0, .1);
+
+    display: flex;
+}
+.timeline > div {
+    flex: 1;
+    position: relative;
+}
+
+.timeline:before,
+.timeline:after {
+    display: block;
+    content: '';
+    
+    /*width: calc(100% / 32);*/
+    width: calc(100% / 48);
+
+}
+
+.event-slot {
+    flex: 1;
+    position: relative;
+}
+
+.event-slot--close {
+    background-color: #757575;
+    transition: background-color 800ms ease;
+}
+
+.event-slot--close:hover {
+    background-color: #535353;
+}
+
+.event-slot--close:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: FontAwesome;
+    color: #fff;
+    content:"\f056";
+    font-size: 30px;
+    visibility: hidden;
+    transition: visibility 400ms ease;
+    cursor: pointer;
+}
+
+.event-slot--empty {
+    background-color: #BBDEFB;
+    transition: background-color 800ms ease;
+}
+
+.event-slot--empty:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: FontAwesome;
+    color: #fff;
+    content: "\f055";
+    font-size: 30px;
+    visibility: hidden;
+    transition: visibility 400ms ease;
+    cursor: pointer;
+
+}
+
+.event-slot--empty:hover {
+    background-color: #536DFE;
+}
+
+.event-slot--empty:hover:before,
+.event-slot--close:hover:before{
+    visibility: visible;
+}
+
+.badge {
+    position:relative;
+    margin: 5px 0 0 5px;
+    color: #1976D2;
+}
+.badge[data-badge]:after {
+    content:attr(data-badge);
+    position:absolute;
+    top: -7px;
+    right: -12px;
+    font-size: 11px;
+    background: #1976D2;
+    color: white;
+    width: 18px;
+    height: 18px;
+    text-align:center;
+    line-height:18px;
+    border-radius:50%;
+    box-shadow:0 0 1px #333;
+}
